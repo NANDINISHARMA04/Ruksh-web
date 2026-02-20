@@ -1,0 +1,255 @@
+/* Import Modern Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+.header {
+    background: #ffffff;
+    padding: 18px 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 550px;
+}
+
+.main-name {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.sub-name {
+    font-size: 14px;
+    color: #6b7280;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Underline Animation */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #c19a6b; /* leather gold tone */
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+.about-section {
+    padding: 80px 0;
+}
+
+.about-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1f2937;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.about-section h1::after {
+    content: "";
+    width: 60%;
+    height: 4px;
+    background: #c19a6b;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    border-radius: 3px;
+}
+
+.about-section h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: #111827;
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h2::after {
+    content: "";
+    width: 50%;
+    height: 3px;
+    background: #c19a6b;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+}
+
+.about-section p {
+    font-size: 17px;
+    line-height: 1.9;
+    margin-top: 20px;
+    color: #4b5563;
+    max-width: 850px;
+}
+.content-row {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.text-block {
+    flex: 1;
+}
+
+.image-block img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.image-block img:hover {
+    transform: scale(1.05);
+}
+section {
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #c19a6b;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: #a37c4b;
+    transform: translateY(-3px);
+}
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .content-row {
+        flex-direction: column;
+    }
+
+    .about-section h1 {
+        font-size: 32px;
+    }
+}
+/* ===== Premium Light Glass Carousel ===== */
+
+.carousel-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f5f5f5, #eaeaea);
+    text-align: center;
+}
+
+.carousel-title {
+    font-size: 34px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.carousel-title::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background: #c6a14a;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 5px;
+}
+
+.carousel {
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    animation: slide 18s linear infinite;
+}
+
+.carousel-track img {
+    height: 260px;
+    border-radius: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.carousel-track img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
